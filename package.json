@@ -1,0 +1,25 @@
+{
+  "name": "purpleschool-typescript",
+  "version": "1.0.0",
+  "description": "Изучаем Typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vpalex999/purpleschool-typescript.git"
+  },
+  "author": "vpalex999",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vpalex999/purpleschool-typescript/issues"
+  },
+  "homepage": "https://github.com/vpalex999/purpleschool-typescript#readme",
+  "engines": {
+    "node": "22.18.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
