@@ -4,14 +4,14 @@ const makeOrdinal = require("./makeOrdinal");
 const isFinite = require("./isFinite");
 const isSafeNumber = require("./isSafeNumber");
 
-const TEN = 10;
-const ONE_HUNDRED = 100;
-const ONE_THOUSAND = 1000;
-const ONE_MILLION = 1000000;
-const ONE_BILLION = 1000000000; //         1.000.000.000 (9)
-const ONE_TRILLION = 1000000000000; //     1.000.000.000.000 (12)
-const ONE_QUADRILLION = 1000000000000000; // 1.000.000.000.000.000 (15)
-const MAX = 9007199254740992; // 9.007.199.254.740.992 (15)
+const TEN: number = 10;
+const ONE_HUNDRED: number = 100;
+const ONE_THOUSAND: number = 1000;
+const ONE_MILLION: number = 1000000;
+const ONE_BILLION: number = 1000000000; //         1.000.000.000 (9)
+const ONE_TRILLION: number = 1000000000000; //     1.000.000.000.000 (12)
+const ONE_QUADRILLION: number = 1000000000000000; // 1.000.000.000.000.000 (15)
+const MAX: number = 9007199254740992; // 9.007.199.254.740.992 (15)
 
 const LESS_THAN_TWENTY: string[] = [
   "zero",
@@ -57,7 +57,7 @@ const TENTHS_LESS_THAN_HUNDRED: string[] = [
  * @param {boolean} [asOrdinal] - Deprecated, use toWordsOrdinal() instead!
  * @returns {string}
  */
-function toWords(number: number | string, asOrdinal: boolean): string {
+function toWords(number: number | string, asOrdinal?: boolean): string {
   let words: string;
   const num = parseInt(number.toString(), 10);
 
@@ -75,6 +75,12 @@ function toWords(number: number | string, asOrdinal: boolean): string {
   return asOrdinal ? makeOrdinal(words) : words;
 }
 
+/**
+ * 
+ * @param {number} number
+ * @param {string[]} [rest]
+ * @returns {string}
+ */
 function generateWords(number: number, rest?: string[]): string {
   let remainder = 0;
   let word: string | undefined;
