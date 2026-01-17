@@ -53,7 +53,7 @@ type Company = {
   address: Address;
 };
 
-type Crypto = {
+type UserCrypto = {
   coin: string;
   wallet: string;
   network: string;
@@ -86,7 +86,7 @@ interface User {
   ein: string;
   ssn: string;
   userAgent: string;
-  crypto: Crypto;
+  crypto: UserCrypto;
   role: string;
 }
 interface Users {
@@ -95,3 +95,21 @@ interface Users {
   skip: number;
   limit: number;
 }
+
+const getData = (): Promise<Users> => {
+  return fetch("https://dummyjson.com/users", { method: "GET" })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        console.log("Error!");
+      }
+    })
+    .catch((err) => {
+      if (err instanceof Error) {
+        console.log(err.message);
+      }
+    });
+};
+
+console.log(getData().then((d) => console.log(d)));
